@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>SmartEnroll AI - Verify Details</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+<div class="page">
+
+
+    <!-- ================= HEADER ================= -->
+
+    <div class="header">
+
+        <div class="logo">
+            🤖
+        </div>
+
+        <div>
+
+            <h1>SmartEnroll AI</h1>
+
+            <p>
+                AI-Powered Student Registration System
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= PROGRESS ================= -->
+
+    <div class="progress">
+
+        <div class="step completed">
+            <span>✓</span>
+            <small>Upload</small>
+        </div>
+
+        <div class="line completed-line"></div>
+
+        <div class="step completed">
+            <span>✓</span>
+            <small>OCR</small>
+        </div>
+
+        <div class="line completed-line"></div>
+
+        <div class="step active">
+            <span>3</span>
+            <small>Verify</small>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="step">
+            <span>4</span>
+            <small>Register</small>
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= AI MESSAGE ================= -->
+
+    <div class="ai-message">
+
+        <div class="robot-icon">
+            🤖
+        </div>
+
+        <div>
+
+            <h3>AI Agent found your details!</h3>
+
+            <p>
+                Your documents have been scanned successfully.
+                Please verify the extracted information before
+                completing registration.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= FORM ================= -->
+
+    <form action="/success" method="POST">
+
+
+        <!-- ================================================= -->
+        <!-- AADHAAR CARD SECTION -->
+        <!-- ================================================= -->
+
+        <div class="document-card aadhaar-card">
+
+            <div class="document-header">
+
+                <div class="document-icon">
+                    🪪
+                </div>
+
+                <div>
+
+                    <h2>Aadhaar Card Information</h2>
+
+                    <p>
+                        Details extracted from Aadhaar Card
+                    </p>
+
+                </div>
+
+                <span class="verified">
+                    ✓ Verified
+                </span>
+
+            </div>
+
+
+            <div class="fields">
+
+
+                <!-- FULL NAME -->
+
+                <div class="field">
+
+                    <label>
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        name="name"
+                        value="{{ name }}"
+                        readonly
+                    >
+
+                </div>
+
+
+                <!-- DOB -->
+
+                <div class="field">
+
+                    <label>
+                        Date of Birth
+                    </label>
+
+                    <input
+                        type="text"
+                        name="dob"
+                        value="{{ dob }}"
+                        readonly
+                    >
+
+                </div>
+
+
+                <!-- GENDER -->
+
+                <div class="field">
+
+                    <label>
+                        Gender
+                    </label>
+
+                    <input
+                        type="text"
+                        name="gender"
+                        value="{{ gender }}"
+                        readonly
+                    >
+
+                </div>
+
+
+                <!-- AADHAAR -->
+
+                <div class="field full">
+
+                    <label>
+                        Aadhaar Number
+                    </label>
+
+                    <input
+                        type="text"
+                        name="aadhaar"
+                        value="{{ aadhaar }}"
+                        readonly
+                    >
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================================================= -->
+        <!-- MARKSHEET SECTION -->
+        <!-- ================================================= -->
+
+        <div class="document-card marksheet-card">
+
+            <div class="document-header">
+
+                <div class="document-icon">
+                    🎓
+                </div>
+
+                <div>
+
+                    <h2>10th Marksheet Information</h2>
+
+                    <p>
+                        Details extracted from 10th Marksheet
+                    </p>
+
+                </div>
+
+                <span class="verified">
+                    ✓ Verified
+                </span>
+
+            </div>
+
+
+            <div class="fields">
+
+
+                <!-- BOARD -->
+
+                <div class="field full">
+
+                    <label>
+                        Education Board
+                    </label>
+
+                    <input
+                        type="text"
+                        name="board"
+                        value="{{ board }}"
+                        readonly
+                    >
+
+                </div>
+
+
+                <!-- SEAT -->
+
+                <div class="field">
+
+                    <label>
+                        Seat Number
+                    </label>
+
+                    <input
+                        type="text"
+                        name="seat"
+                        value="{{ seat }}"
+                        readonly
+                    >
+
+                </div>
+
+
+                <!-- YEAR -->
+
+                <div class="field">
+
+                    <label>
+                        Passing Year
+                    </label>
+
+                    <input
+                        type="text"
+                        name="year"
+                        value="{{ year }}"
+                        readonly
+                    >
+
+                </div>
+
+
+                <!-- PERCENTAGE -->
+
+                <div class="field">
+
+                    <label>
+                        Percentage
+                    </label>
+
+                    <input
+                        type="text"
+                        name="percentage"
+                        value="{{ percentage }}"
+                        readonly
+                    >
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================================================= -->
+        <!-- AI VERIFICATION -->
+        <!-- ================================================= -->
+
+        <div class="verification-box">
+
+            <div class="verification-icon">
+                🛡️
+            </div>
+
+            <div>
+
+                <h3>AI Verification Complete</h3>
+
+                <p>
+                    {{ message }}
+                </p>
+
+            </div>
+
+            <div class="check">
+                ✓
+            </div>
+
+        </div>
+
+
+
+        <!-- ================================================= -->
+        <!-- SUBMIT -->
+        <!-- ================================================= -->
+
+        <div class="submit-area">
+
+            <p>
+                Please verify the information before submitting.
+            </p>
+
+            <button type="submit">
+
+                ✓
+                Yes, Submit Registration
+
+            </button>
+
+        </div>
+
+
+    </form>
+
+
+</div>
+
+</body>
+
+</html>

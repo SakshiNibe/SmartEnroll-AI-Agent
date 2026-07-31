@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Upload Documents | SmartEnroll AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<div class="upload-page">
+
+
+    <!-- NAVBAR -->
+
+    <nav class="upload-navbar">
+
+        <div class="upload-brand">
+
+            <div class="upload-logo">
+                🤖
+            </div>
+
+            <div>
+                <h2>SmartEnroll</h2>
+                <span>AI Agent</span>
+            </div>
+
+        </div>
+
+
+        <a href="/" class="back-home">
+            ← Home
+        </a>
+
+    </nav>
+
+
+
+    <!-- PAGE HEADER -->
+
+    <section class="upload-header">
+
+        <div class="upload-badge">
+            🔐 Secure Document Processing
+        </div>
+
+        <h1>
+            Upload Your Documents
+        </h1>
+
+        <p>
+            Upload your Aadhaar Card and 10th Marksheet.
+            Our AI will automatically extract and verify
+            your information.
+        </p>
+
+    </section>
+
+
+
+    <!-- PROGRESS -->
+
+    <div class="upload-progress">
+
+        <div class="upload-step active">
+
+            <div>1</div>
+
+            <span>Upload</span>
+
+        </div>
+
+
+        <div class="upload-line"></div>
+
+
+        <div class="upload-step">
+
+            <div>2</div>
+
+            <span>AI OCR</span>
+
+        </div>
+
+
+        <div class="upload-line"></div>
+
+
+        <div class="upload-step">
+
+            <div>3</div>
+
+            <span>Auto Fill</span>
+
+        </div>
+
+
+        <div class="upload-line"></div>
+
+
+        <div class="upload-step">
+
+            <div>4</div>
+
+            <span>Verify</span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- UPLOAD FORM -->
+
+    <form action="/autofill"
+          method="POST"
+          enctype="multipart/form-data">
+
+
+        <div class="document-upload-grid">
+
+
+            <!-- AADHAAR -->
+
+            <div class="upload-card aadhaar-upload">
+
+                <div class="upload-card-top">
+
+                    <div class="upload-document-icon">
+                        🪪
+                    </div>
+
+                    <div>
+
+                        <h2>Aadhaar Card</h2>
+
+                        <p>
+                            Upload your Aadhaar Card
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="upload-area">
+
+                    <div class="upload-cloud">
+                        📤
+                    </div>
+
+                    <h3>
+                        Upload Aadhaar
+                    </h3>
+
+                    <p>
+                        JPG, JPEG or PNG
+                    </p>
+
+
+                    <label class="choose-file">
+
+                        Choose File
+
+                        <input
+                            type="file"
+                            name="aadhaar"
+                            accept=".jpg,.jpeg,.png"
+                            required
+                        >
+
+                    </label>
+
+                    <div class="file-name">
+                        Aadhaar Card required
+                    </div>
+
+                </div>
+
+
+                <div class="security-note">
+                    🔒 Your document is processed securely
+                </div>
+
+            </div>
+
+
+
+            <!-- MARKSHEET -->
+
+            <div class="upload-card marksheet-upload">
+
+                <div class="upload-card-top">
+
+                    <div class="upload-document-icon">
+                        📄
+                    </div>
+
+                    <div>
+
+                        <h2>10th Marksheet</h2>
+
+                        <p>
+                            Upload your SSC Marksheet
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="upload-area">
+
+                    <div class="upload-cloud">
+                        📤
+                    </div>
+
+                    <h3>
+                        Upload Marksheet
+                    </h3>
+
+                    <p>
+                        JPG, JPEG or PNG
+                    </p>
+
+
+                    <label class="choose-file">
+
+                        Choose File
+
+                        <input
+                            type="file"
+                            name="marksheet"
+                            accept=".jpg,.jpeg,.png"
+                            required
+                        >
+
+                    </label>
+
+                    <div class="file-name">
+                        10th Marksheet required
+                    </div>
+
+                </div>
+
+
+                <div class="security-note">
+                    🔒 Your document is processed securely
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- AI INFO -->
+
+        <div class="ai-upload-info">
+
+            <div class="ai-upload-icon">
+                🤖
+            </div>
+
+            <div>
+
+                <h3>
+                    SmartEnroll AI will do the rest
+                </h3>
+
+                <p>
+                    After uploading, AI OCR will extract
+                    your details and automatically fill
+                    the registration form.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- BUTTON -->
+
+        <div class="upload-submit">
+
+            <button type="submit">
+
+                🚀 Extract & Auto Fill
+
+            </button>
+
+            <p>
+                AI OCR • Data Extraction • Verification
+            </p>
+
+        </div>
+
+
+    </form>
+
+
+</div>
+
+
+</body>
+
+</html>

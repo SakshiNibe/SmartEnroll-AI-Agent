@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Registration Successful - SmartEnroll AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+
+        .success-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 15px;
+        }
+
+        .success-card {
+            width: 100%;
+            max-width: 850px;
+            background: white;
+            border-radius: 25px;
+            padding: 35px;
+            box-shadow: 0 15px 45px rgba(15, 23, 42, 0.12);
+            text-align: center;
+        }
+
+        .success-icon {
+            width: 85px;
+            height: 85px;
+            margin: 0 auto 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #dcfce7;
+            color: #16a34a;
+
+            font-size: 45px;
+
+            box-shadow: 0 8px 25px rgba(22, 163, 74, 0.18);
+        }
+
+        .success-card h1 {
+            margin: 0;
+            color: #166534;
+            font-size: 30px;
+        }
+
+        .success-subtitle {
+            color: #64748b;
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+
+        .registration-id {
+            display: inline-block;
+            padding: 10px 18px;
+            border-radius: 20px;
+            background: #eff6ff;
+            color: #2563eb;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .details-card {
+            text-align: left;
+            border: 1px solid #e2e8f0;
+            border-radius: 18px;
+            overflow: hidden;
+            margin-bottom: 25px;
+        }
+
+        .details-title {
+            padding: 18px 20px;
+            background: #f8fafc;
+            font-size: 19px;
+            font-weight: 700;
+            color: #172033;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 15px 20px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .detail-label {
+            color: #64748b;
+            font-weight: 600;
+        }
+
+        .detail-value {
+            color: #172033;
+            font-weight: 600;
+            text-align: right;
+        }
+
+        .status-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            padding: 16px;
+
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+
+            border-radius: 14px;
+
+            text-align: left;
+
+            margin-bottom: 25px;
+        }
+
+        .status-check {
+            width: 35px;
+            height: 35px;
+
+            flex-shrink: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #22c55e;
+            color: white;
+            font-weight: bold;
+        }
+
+        .status-box strong {
+            color: #166534;
+        }
+
+        .status-box p {
+            margin: 3px 0 0;
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        .home-btn {
+            display: inline-block;
+
+            padding: 13px 28px;
+
+            border-radius: 12px;
+
+            background: linear-gradient(
+                135deg,
+                #2563eb,
+                #4f46e5
+            );
+
+            color: white;
+
+            text-decoration: none;
+
+            font-weight: 600;
+
+            box-shadow:
+                0 8px 20px
+                rgba(37, 99, 235, 0.25);
+
+            transition: 0.2s;
+        }
+
+        .home-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 600px) {
+
+            .success-card {
+                padding: 25px 18px;
+            }
+
+            .success-card h1 {
+                font-size: 25px;
+            }
+
+            .detail-row {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .detail-value {
+                text-align: left;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="success-page">
+
+
+    <div class="success-card">
+
+
+        <!-- SUCCESS ICON -->
+
+        <div class="success-icon">
+            ✓
+        </div>
+
+
+        <!-- TITLE -->
+
+        <h1>
+            Registration Successful!
+        </h1>
+
+
+        <p class="success-subtitle">
+
+            🎉 Your student registration has been
+            successfully completed using SmartEnroll AI.
+
+        </p>
+
+
+        <div class="registration-id">
+
+            ✓ Registration Completed
+
+        </div>
+
+
+        <!-- STATUS -->
+
+        <div class="status-box">
+
+            <div class="status-check">
+                ✓
+            </div>
+
+            <div>
+
+                <strong>
+                    AI Verification Completed
+                </strong>
+
+                <p>
+                    Your Aadhaar and 10th marksheet
+                    details have been successfully verified.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- DETAILS -->
+
+        <div class="details-card">
+
+
+            <div class="details-title">
+
+                👤 Student Information
+
+            </div>
+
+
+            <div class="detail-row">
+
+                <span class="detail-label">
+                    Full Name
+                </span>
+
+                <span class="detail-value">
+                    {{ name }}
+                </span>
+
+            </div>
+
+
+            <div class="detail-row">
+
+                <span class="detail-label">
+                    Date of Birth
+                </span>
+
+                <span class="detail-value">
+                    {{ dob }}
+                </span>
+
+            </div>
+
+
+            <div class="detail-row">
+
+                <span class="detail-label">
+                    Gender
+                </span>
+
+                <span class="detail-value">
+                    {{ gender }}
+                </span>
+
+            </div>
+
+
+            <div class="detail-row">
+
+                <span class="detail-label">
+                    Aadhaar Number
+                </span>
+
+                <span class="detail-value">
+                    {{ aadhaar }}
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- MARKSHEET DETAILS -->
+
+        <div class="details-card">
+
+
+            <div class="details-title">
+
+                🎓 10th Marksheet Information
+
+            </div>
+
+
+            <div class="detail-row">
+
+                <span class="detail-label">
+                    Board
+                </span>
+
+                <span class="detail-value">
+                    {{ board }}
+                </span>
+
+            </div>
+
+
+            <div class="detail-row">
+
+                <span class="detail-label">
+                    Seat Number
+                </span>
+
+                <span class="detail-value">
+                    {{ seat }}
+                </span>
+
+            </div>
+
+
+            <div class="detail-row">
+
+                <span class="detail-label">
+                    Passing Year
+                </span>
+
+                <span class="detail-value">
+                    {{ year }}
+                </span>
+
+            </div>
+
+
+            <div class="detail-row">
+
+                <span class="detail-label">
+                    Percentage
+                </span>
+
+                <span class="detail-value">
+                    {{ percentage }}%
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- FOOTER MESSAGE -->
+
+        <p style="color:#64748b; font-size:14px;">
+
+            Your information has been securely stored
+            in the student registration database.
+
+        </p>
+
+
+        <!-- HOME -->
+
+        <a href="/" class="home-btn">
+
+            🏠 Back to Home
+
+        </a>
+
+
+    </div>
+
+
+</div>
+
+
+</body>
+
+</html>

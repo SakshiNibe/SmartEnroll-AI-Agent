@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Already Registered</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>⚠️ Already Registered</h1>
+
+    <p>
+        This Aadhaar number is already registered.
+    </p>
+
+    <p>
+        Aadhaar:
+        <b>{{ aadhaar }}</b>
+    </p>
+
+    <br>
+
+    <a href="/upload">
+        <button>Try Another Registration</button>
+    </a>
+
+    <br><br>
+
+    <a href="/">
+        <button>Home</button>
+    </a>
+
+</div>
+
+</body>
+</html>
